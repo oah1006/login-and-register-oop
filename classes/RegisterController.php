@@ -57,6 +57,17 @@ class RegisterController {
         return $result;
     }
 
+    private function checkUsernameTaken() {
+        $result = null;
+        if (!$this->checkUsers($this->username, $this->email)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+
+        return $result;
+    }
+
 }
 
 
