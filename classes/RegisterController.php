@@ -13,6 +13,36 @@ class RegisterController {
         $this->email = $email;
     }
 
+    private function registerUsers() {
+        if ($this->checkEmptyInput() == false) {
+            header("Location: ../index.php?error=emptyinput");
+            exit();
+        }
+
+        if ($this->checkUsername() == false) {
+            header("Location: ../index.php?error=invalidusername");
+            exit();
+        }
+
+        if($this->checkEmail() == false) {
+            header("Location: ../index.php?error=invalidemail");
+            exit();
+        }
+
+        if($this->checkMatchPassword() == false) {
+            header("Location: ../index.php?error=invalidpassword");
+            exit();
+        }
+
+        if($this->checkUsernameTaken() == false) {
+            header("Location: ../index.php?error=invalidusernametaken");
+            exit();
+        }
+
+        $this->setUsers();
+
+    }
+
     private function checkEmptyInput() {
         $result = null;
         if (empty($this->username) || empty($this->password) || empty($this->passwordConfirmation) || empty($this->email)) {
