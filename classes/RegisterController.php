@@ -35,6 +35,17 @@ class RegisterController {
         return $result;
     }
 
+    private function checkEmail() {
+        $result = null;
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+
+        return $result;
+    }
+
 
 }
 
