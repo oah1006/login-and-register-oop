@@ -15,7 +15,18 @@ class RegisterController {
 
     private function checkEmptyInput() {
         $result = null;
-        if(empty($this->username) || empty($this->password) || empty($this->passwordConfirmation) || empty($this->email)) {
+        if (empty($this->username) || empty($this->password) || empty($this->passwordConfirmation) || empty($this->email)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+
+        return $result;
+    }
+
+    private function checkUsername() {
+        $result = null;
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $this->username)) {
             $result = false;
         } else {
             $result = true;
