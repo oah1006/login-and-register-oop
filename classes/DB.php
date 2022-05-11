@@ -8,8 +8,8 @@ class DB {
     
     protected function connect() {
         try {
-            $pdo = new PDO("mysql:host=" . $this->host . ";dbname=" . this->db, $username, $password);
-            return $dbo;
+            $pdo = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db, $this->username, $this->password);
+            return $pdo;
         } catch (PDOException $e) {
             print("Error! " . $e->getMessage() . "<br/>");
             die();

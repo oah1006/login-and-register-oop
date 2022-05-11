@@ -1,9 +1,9 @@
 <?php
 
-spl_autoload_register("myAutoLoader");
+include "autoLoader.php";
 
 if (isset($_POST["submit"])) {
-
+    
     // Get the data
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -11,26 +11,15 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
 
     // Instantiate RegisterController classes and auto loader
-    function myAutoLoader($className) {
-        $path = "classes/";
-        $extension = ".php";
-        $fullPath = $path . $className . $extension;
-
-        if(!file_exists($fullPath)) {
-            return false;
-        }
-
-        include_once($fullPath);
-    }
     
-
     $register = new RegisterController($username, $password, $passwordConfirmation, $email);
 
-    // Running error handler and user register
-    $register->RegisterUser();
 
-    // Going to back to front page
-    header("Location: ../index.php?error=none");
+    // Running error handler and user register
+    $register->registerUsers();
+
+    // // Going to back to front page
+    // header("Location: ../index.php?error=none");
 }
 
 
