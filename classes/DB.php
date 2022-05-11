@@ -6,7 +6,7 @@ class DB {
     private $password = "";
     private $db = "login";
     
-    private function connect() {
+    protected function connect() {
         try {
             $pdo = new PDO("mysql:host=" . $this->host . ";dbname=" . this->db, $username, $password);
             return $dbo;
