@@ -46,6 +46,16 @@ class RegisterController {
         return $result;
     }
 
+    private function checkMatchPassword() {
+        $result = null;
+        if ($this->password !== $this->passwordConfirmation) {
+            $result = false;
+        } else {
+            $result = true;
+        } 
+
+        return $result;
+    }
 
 }
 
