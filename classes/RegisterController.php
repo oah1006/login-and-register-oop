@@ -13,6 +13,18 @@ class RegisterController {
         $this->email = $email;
     }
 
+    private function checkEmptyInput() {
+        $result = null;
+        if(empty($this->username) || empty($this->password) || empty($this->passwordConfirmation) || empty($this->email)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+
+        return $result;
+    }
+
+
 }
 
 
