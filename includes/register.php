@@ -25,6 +25,12 @@ if (isset($_POST["submit"])) {
     
 
     $register = new RegisterController($username, $password, $passwordConfirmation, $email);
+
+    // Running error handler and user register
+    $register->RegisterUser();
+
+    // Going to back to front page
+    header("Location: ../index.php?error=none");
 }
 
 

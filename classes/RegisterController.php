@@ -13,7 +13,7 @@ class RegisterController {
         $this->email = $email;
     }
 
-    private function registerUsers() {
+    public function registerUsers() {
         if ($this->checkEmptyInput() == false) {
             header("Location: ../index.php?error=emptyinput");
             exit();
