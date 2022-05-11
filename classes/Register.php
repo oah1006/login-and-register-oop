@@ -12,6 +12,8 @@ class Register extends DB {
             header("Location: ../index.php?error=stmtfailed");
             exit();
         }
+
+        $stmt = null;
     }
 
     protected function checkUsers($username, $email) {

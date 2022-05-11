@@ -39,7 +39,7 @@ class RegisterController {
             exit();
         }
 
-        $this->setUsers();
+        $this->setUsers($this->username, $this->password, $this->email);
 
     }
 
