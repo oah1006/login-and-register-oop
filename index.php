@@ -22,16 +22,16 @@
             <div>
                 <p class="text-4xl font-medium mt-4 mb-8">Login</p>
                 <p class="text-zinc-500 mb-4 text-lg">Don't have an account yet? Register here!</p>
-                <form method="post" action="includes/register.php" class="flex flex-col">
+                <form method="post" action="includes/login.php" class="flex flex-col">
                     <input type="text" name="username" placeholder="Username..." class="border border-solid border-zinc-300 py-2 px-2 mb-2">
                     <input type="password" name="password" placeholder="Passowrd..." class="border border-solid border-zinc-300 py-2 px-2 my-2">
                     <button type="submit" name="submit" value="Login" class="bg-blue-500 text-white px-4 py-1 rounded-lg text-lg font-medium mt-2">Submit</button>
                 </form>
             </div>
             <div class="ml-auto bg-black px-10 rounded-lg">
-                <p class="text-4xl font-medium mt-4 mb-8 text-white text-center">Login</p>
+                <p class="text-4xl font-medium mt-4 mb-8 text-white text-center">Register</p>
                 <p class="text-white mb-4 text-lg">Don't have an account yet? Register here!</p>
-                <form method="post" action="includes/login.php" class="flex flex-col">
+                <form method="post" action="includes/register.php" class="flex flex-col">
                     <input type="text" name="username" placeholder="Username..." class="border border-solid border-zinc-300 py-2 px-2 mb-2">
                     <input type="password" name="password" placeholder="Passowrd..." class="border border-solid border-zinc-300 py-2 px-2 mb-2 my-2">
                     <input type="password" name="password_confirmation" placeholder="Confirmation passowrd..." class="border border-solid border-zinc-300 py-2 px-2 mb-2 my-2">
