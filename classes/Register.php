@@ -7,7 +7,7 @@ class Register extends DB {
 
         $hashingPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        if (!$stmt->execute(array($username, $password, $email))) {
+        if (!$stmt->execute(array($username, $hashingPassword, $email))) {
             $stmt = null;
             header("Location: ../index.php?error=stmtfailed");
             exit();

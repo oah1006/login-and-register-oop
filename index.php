@@ -12,8 +12,24 @@
         <div class="bg-black">
             <div class="flex px-56 py-4">
                 <div class="ml-auto">
-                    <button class="text-white text-lg font-medium">Login</button>
-                    <button class="ml-8 bg-blue-500 text-white px-4 py-1 rounded-lg text-lg font-medium">Register</button>
+                    <!-- <button class="text-white text-lg font-medium">Login</button>
+                    <button class="ml-8 bg-blue-500 text-white px-4 py-1 rounded-lg text-lg font-medium">Register</button> -->
+                    <?php
+                        if(isset($_SESSION["users_id"])) 
+                        {
+                    ?>
+                        <button href="#" class="text-white text-lg font-medium"><?php echo $_SESSION["usersname"]; ?></button>
+                        <button href="includes/logout.php" class="ml-8 bg-blue-500 text-white px-4 py-1 rounded-lg text-lg font-medium">Logout</button>
+                    <?php
+                        } 
+                        else 
+                        {
+                    ?>
+                        <button href="#" class="text-white text-lg font-medium">Login</button>
+                        <button href="#" class="ml-8 bg-blue-500 text-white px-4 py-1 rounded-lg text-lg font-medium">Register</button> 
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

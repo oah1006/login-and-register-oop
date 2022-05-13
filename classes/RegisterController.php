@@ -44,7 +44,7 @@ class RegisterController extends Register {
 
     }
 
-    public function checkEmptyInput() {
+    private function checkEmptyInput() {
         $result = null;
         if (empty($this->username) || empty($this->password) || empty($this->passwordConfirmation) || empty($this->email)) {
             $result = false;
